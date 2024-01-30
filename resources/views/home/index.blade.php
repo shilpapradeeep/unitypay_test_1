@@ -17,7 +17,7 @@
             <li>Should Validate inputs.</li>
             <li>Please follow all the coding and naming standards.</li>
             <li>Regularly Commit in Git as you progress.</li>
-            <li>Mail us your cloned / forked git repository link after you complete it.</li>
+            <li>Mail us your Forked git repository link after you complete it.</li>
         </ol>
     </div>
 </div>

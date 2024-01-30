@@ -1,9 +1,9 @@
 # Coding Assignment
->*Please Clone / Fork this repository and work on the assignment. You can send us your public repository in the mail.*
+>**Please Fork this repository and work on the assignment. You can send us your public repository in the mail.**
 
 ## Setup
 
-1. Clone / Fork this repository to your local system.
+1. Fork this repository to your local system. Create your own repository to do this task. Do not add pull requests to this repository.
 1. Create an new database in your local setup.
 1. Run ```composer install``` to install laravel and composer packages
 1. Copy the ```.env.example``` and create an ```.env``` file. Fill your database name here.
