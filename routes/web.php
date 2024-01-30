@@ -1,18 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// INSTRUCTIONS
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home.index');
+})->name('home');
+
+// COMPANIES
+Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+Route::get('/companies/add', [CompanyController::class, 'add'])->name('companies.add');
+Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
+// TODO: Add routes for companies.show, companies.update, companies.show_users, companies.add_users here
+
+
+// Users
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/add', [UserController::class, 'add'])->name('users.add');
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
+
+
