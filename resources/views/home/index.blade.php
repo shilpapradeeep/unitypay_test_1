@@ -36,7 +36,7 @@
             </li>
             <ul>
                 <li>
-                    <b>Write Migrations</b> to add Users to Companies. <br>
+                    <b>Write Migration & Model</b> to add Users to Companies. <br>
                 </li>
                 <li><b>Please note:</b> Multiple users can have multiple companies assigned to them.</li>
                 <li>

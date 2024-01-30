@@ -29,7 +29,8 @@
 1. Please follow all the coding and naming standards.
 1. Regularly Commit in Git as you progress.
 1. Mail us the forked git repository link after you complete it.
-1. Task instructions in the Home page and will be shown after you setup the code in your system.
+1. Task instructions are in the Home page and will be shown after you setup the code in your system.
+1. You can search for ```TODO:``` in the code to check for important comments
 
 
 
