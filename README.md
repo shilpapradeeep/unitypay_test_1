@@ -27,6 +27,7 @@
 1. Should write migrations to create database tables.
 1. Should Validate inputs.
 1. Please follow all the coding and naming standards.
+1. You can use any Javascript libraries or packages like jQuery (if needed).
 1. Regularly Commit in Git as you progress.
 1. Mail us the forked git repository link after you complete it.
 1. Task instructions are in the Home page and will be shown after you setup the code in your system.
