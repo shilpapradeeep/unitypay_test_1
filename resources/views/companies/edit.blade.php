@@ -10,7 +10,7 @@
     <div class="card-header">Edit Company</div>
 
     <div class="card-body w-50">
-        <form action="{{ route('companies.update') }}" method="post">
+        <form action="{{ route('companies.update') }}" id="myForm" method="post">
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -34,7 +34,7 @@
                 <label for="name" class="form-label">Company Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ $company->name }}">
             </div>
-            <button type="submit" class="btn btn-success">Edit Company</button>
+            <button type="submit" id="submitBtn" class="btn btn-success">Edit Company</button>
         </form>
     </div>
 
