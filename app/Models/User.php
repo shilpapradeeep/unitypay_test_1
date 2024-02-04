@@ -11,4 +11,9 @@ class User extends Model
     protected $fillable = ['name'];
 
     public $timestamps = false;
+
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class);
+    }
 }

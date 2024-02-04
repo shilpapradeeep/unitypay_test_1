@@ -37,7 +37,7 @@
                             <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
-                            <button class="btn btn-primary">+ Add Users</button>
+                            <a href="{{ route('companies.show_users', $company->id) }}" type="submit" class="btn btn-primary">+ Add Users</a>
                         </td>
                     </tr>
                 @endforeach

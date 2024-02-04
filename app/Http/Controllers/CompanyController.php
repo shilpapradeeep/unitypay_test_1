@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use App\Models\User;
 
 class CompanyController extends Controller
 {
@@ -66,5 +67,31 @@ class CompanyController extends Controller
             // An error occurred during the update
             return back()->with('error', 'Sorry something went wrong!');
         }
+    }
+
+    public function showUsers(Company $company)
+    {
+        $users = User::all();
+        $company->load('users');
+
+        if (request()->has('company_id')) {
+            Company::with('users')->findOrFail(request()->input('company_id'));
+        }
+
+        return view('companies.add_users', ['users' => $users, 'company' =>$company]);
+    }
+
+    public function addUsers(Request $request, Company $company)
+    {
+        $request->validate([
+            'users' => 'required|array',
+        ]);
+
+        $company = Company::findOrFail($company->id);
+
+        // Attach selected users to the company
+        $company->users()->sync($request->users);
+
+        return redirect('/companies')->with('success', 'Users added to company successfully.');
     }
 }
