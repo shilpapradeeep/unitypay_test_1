@@ -32,7 +32,7 @@
                     <tr>
                         <td>{{ $company->id }}</td>
                         <td>{{ $company->name }}</td>
-                        <td>??</td>
+                        <td>{{ $company->users->count(); }}</td><!-- total users in company -->
                         <td>
                             <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-warning">Edit</a>
                         </td>
