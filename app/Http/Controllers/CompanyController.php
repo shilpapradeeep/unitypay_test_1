@@ -59,7 +59,7 @@ class CompanyController extends Controller
 
         if ($update > 0) {
             // Update successful
-            return redirect()->route('companies.index')->with('success', 'Company changed successfully!');
+            return redirect()->route('companies.index')->with('success', 'Company Name changed successfully!');
         } elseif ($update === 0) {
             // No changes were made, handle accordingly
             return back()->with('error', 'No changes were made to the company name.');
@@ -84,7 +84,7 @@ class CompanyController extends Controller
     public function addUsers(Request $request, Company $company)
     {
         $request->validate([
-            'users' => 'required|array',
+            'users' => 'array',
         ]);
 
         $company = Company::findOrFail($company->id);
@@ -92,6 +92,6 @@ class CompanyController extends Controller
         // Attach selected users to the company
         $company->users()->sync($request->users);
 
-        return redirect('/companies')->with('success', 'Users added to company successfully.');
+        return redirect('/companies')->with('success', 'User list for company updated successfully.');
     }
 }
