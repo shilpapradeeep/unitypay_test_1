@@ -12,6 +12,11 @@
         <div class="text-center mb-2">
             <a class="btn btn-success" href="{{ route('companies.add') }}">Add Company</a>
         </div>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <table class="table table-bordered table-hover">
             <thead>
                 <tr class="bg-dark text-white">
@@ -29,7 +34,7 @@
                         <td>{{ $company->name }}</td>
                         <td>??</td>
                         <td>
-                            <button class="btn btn-warning">Edit</button>
+                            <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
                             <button class="btn btn-primary">+ Add Users</button>

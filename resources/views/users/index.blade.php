@@ -9,6 +9,11 @@
             <div class="text-center mb-2">
                 <a class="btn btn-success" href="{{ route('users.add') }}">Add User</a>
             </div>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr class="bg-dark text-white">

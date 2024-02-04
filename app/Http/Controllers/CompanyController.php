@@ -36,4 +36,35 @@ class CompanyController extends Controller
     }
 
     // TODO: Write functions like show, update, showCompanyUsers and addUserToCompany here
+
+    public function edit($id)
+    {
+        $company = Company::where('id',$id)->first();
+        return view('companies.edit', ['company' =>$company]);
+    }
+
+    public function update(Request $request)
+    {
+        $id = $request->post('company_id');
+
+        $request->validate([
+            'name' => 'required|string|regex:/[a-zA-Z]/|max:255|unique:companies,name,'. $id,
+        ], [
+            'name.required' => 'The Company Name field is required.',
+        ]);
+
+        $data['name']=$request->post('name');
+        $update=Company::where('id',$request->post('company_id'))->update($data);
+
+        if ($update > 0) {
+            // Update successful
+            return redirect()->route('companies.index')->with('success', 'Company changed successfully!');
+        } elseif ($update === 0) {
+            // No changes were made, handle accordingly
+            return back()->with('error', 'No changes were made to the company name.');
+        } else {
+            // An error occurred during the update
+            return back()->with('error', 'Sorry something went wrong!');
+        }
+    }
 }
