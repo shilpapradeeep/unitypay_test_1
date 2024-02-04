@@ -24,7 +24,10 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|regex:/[a-zA-Z]/|unique:companies',
+        ], [
+            'name.required' => 'The Company Name field is required.',
+            'name.unique' => 'The Company Name has already been taken.',
         ]);
 
         Company::create($validatedData);

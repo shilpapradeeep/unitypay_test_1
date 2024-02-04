@@ -21,7 +21,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|regex:/[a-zA-Z]/',
+        ], [
+            'name.required' => 'The User Name field is required.',
         ]);
 
         User::create($validatedData);
